@@ -39,7 +39,6 @@ switch(app.get('env')){
     break;
   default:
     throw new Error('Unknown execution environment: ' + app.get('env'));
-
 }
 
 debugLog("Configuring session management to use Mongo DB")
@@ -48,12 +47,29 @@ debugLog("Configuring session management to use Mongo DB")
 //This section is required for session management using a cookie session id and mongo
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-app.use(session({
-    resave: false,
-    saveUninitialized: false,
-    secret: configuration.cookieSecret,
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
-}));
+
+switch(app.get('env')){
+  case 'development':
+    app.use(session({
+        resave: false,
+        saveUninitialized: false,
+        secret: configuration.cookieSecret.development,
+        store: new MongoStore({ mongooseConnection: mongoose.connection })
+    }));
+    break;
+  case 'production':
+    app.use(session({
+        resave: false,
+        saveUninitialized: false,
+        secret: configuration.cookieSecret.production,
+        store: new MongoStore({ mongooseConnection: mongoose.connection })
+    }));
+    break;
+  default:
+    throw new Error('Unknown execution environment: ' + app.get('env'));
+}
+
+
 
 debugLog("Loading Mongo schemas")
 
