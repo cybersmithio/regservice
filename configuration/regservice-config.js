@@ -17,7 +17,7 @@ module.exports = {
            development: {
                 /* TODO: Make sure nothing sensitive in here */
                 clientID: '**********************************************************************',
-                clientSecret: **********************************************************************,
+                clientSecret: '**********************************************************************',
            },
            production: {
                 /* TODO: Make sure nothing sensitive in here */
