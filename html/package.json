@@ -1,0 +1,21 @@
+{
+  "name": "regservice",
+  "private": true,
+  "version": "1.0.0",
+  "description": "User registration service",
+  "dependencies": {
+    "request": "*",
+    "express-handlebars": "*",
+    "body-parser": "*",
+    "passport": "*",
+    "passport-google-oauth": "*",
+    "passport-local": "*",
+    "cookie-parser": "*",
+    "express-session": "*",
+    "connect-mongo": "*",
+    "connect": "*",
+    "mongoose": "*",
+    "express": "*"
+  }
+}
+

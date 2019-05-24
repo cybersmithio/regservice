@@ -1,0 +1,59 @@
+<h1>Registration</h1>
+
+<div class="report-row clearfix">
+<form action="/login" method="post">
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+    <p>
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username"/>
+    </div>
+</div>
+<div class="report-row clearfix">
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password"/>
+    </div>
+    <div>
+        <input type="submit" value="Log In"/>
+    </div>
+</div>
+</form>
+<div class="report-row clearfix">
+Other authentication methods:
+<ul>
+<li><a href="/auth/google">Google OAuth</a>
+</ul>
+</div>
+
+        <div id="nosession" style="top: 284px; left: 148px;">
+            <h1>User Registration</h1>
+
+            <!-- Login form and controls -->
+            <div id="loginContainer" style="">
+                <div class="clear"></div>
+
+<form action="/login" method="post">
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+                    <div class="form-group">
+                        <input type="text" tabindex="1" data-name="username" placeholder="Username" maxlength="128" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="required login-username">
+                        <i class="glyphicons username"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" tabindex="2" data-name="password" placeholder="Password" maxlength="128" autocomplete="off" class="required login-password" data-domselect="login-password">
+                        <i class="glyphicons password"></i>
+                    </div>
+
+
+                    <button type="submit" id="sign-in" tabindex="3" class="button login floatright" data-event="sign in button clicked">Sign In</button>
+                    <div class="clear"></div>
+</form>
+
+
+            </div>
+
+
+        </div>
+
+
