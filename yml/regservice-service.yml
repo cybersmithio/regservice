@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: regservice-service
+spec:
+  ports:
+  - port: 443
+    nodePort: 31001
+    targetPort: regserviceport
+    protocol: TCP
+  selector:
+    app: regservice
+  type: NodePort
